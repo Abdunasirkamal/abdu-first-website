@@ -1,1 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abdu — First Website</title>
+  <meta name="description" content="A simple starter page for Abdu's first website." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa7b2;
+      --accent:#3b82f6;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.06), transparent 8%),
+        radial-gradient(900px 400px at 90% 90%, rgba(99,102,241,0.03), transparent 6%),
+        var(--bg);
+      color:#e6eef3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:28px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:white;
+      font-family:monospace;
+      box-shadow: 0 4px 18px rgba(59,130,246,0.12);
+    }
+    h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-size:14px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 340px;
+      gap:18px;
+      align-items:start;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero{
+      padding:24px;
+      border-radius:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      margin-bottom:16px;
+    }
+    .hero h2{
+      margin:0 0 8px 0;
+      font-size:22px;
+    }
+    .muted{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .features{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .feature{
+      background:var(--glass);
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .cta{
+      display:inline-block;
+      margin-top:16px;
+      background:var(--accent);
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.15);
+    }
+    form label{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;
+      padding:10px 12px;
+      margin-top:6px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      background:transparent;
+      color:inherit;
+      font-size:14px;
+    }
+    textarea{min-height:100px;resize:vertical}
+    footer{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>Abdu — First Website</h1>
+          <div class="muted">A small starter page</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
+    <section class="grid">
+      <div>
+        <article class="card hero" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">Hi — I'm Abdu</h2>
+          <p class="muted">
+            Welcome to my first website. This is a simple, responsive starter page you can edit directly.
+            Use the buttons below to link to your projects or to share your contact details.
+          </p>
+
+          <div class="features" aria-hidden="false">
+            <div class="feature">
+              <strong>Responsive</strong>
+              <div class="muted">Looks good on phones and desktops.</div>
+            </div>
+            <div class="feature">
+              <strong>Easy to edit</strong>
+              <div class="muted">Plain HTML + CSS — no build step required.</div>
+            </div>
+            <div class="feature">
+              <strong>Accessible</strong>
+              <div class="muted">Semantic markup and sensible defaults.</div>
+            </div>
+          </div>
+
+          <a class="cta" href="#contact">Get in touch</a>
+        </article>
+
+        <article class="card" id="projects" aria-labelledby="projects-heading" style="margin-top:12px">
+          <h3 id="projects-heading" style="margin:0 0 8px 0">Projects</h3>
+          <p class="muted" style="margin:0 0 12px 0">Add links to your work or GitHub repos here.</p>
+
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li><a href="#" style="color:var(--accent)">Project One — short description</a></li>
+            <li><a href="#" style="color:var(--accent)">Project Two — short description</a></li>
+            <li><a href="#" style="color:var(--accent)">Project Three — short description</a></li>
+          </ul>
+        </article>
+      </div>
+
+      <aside>
+        <div class="card" id="contact" aria-labelledby="contact-heading">
+          <h3 id="contact-heading" style="margin-top:0">Contact</h3>
+          <p class="muted">Send a quick message — this form is static, but you can wire it to an endpoint later.</p>
+
+          <form onsubmit="handleForm(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write a short message"></textarea>
+
+            <button type="submit" class="cta" style="display:block;width:100%;text-align:center;margin-top:12px">Send</button>
+          </form>
+
+          <script>
+            function handleForm(e){
+              e.preventDefault();
+              const name = document.getElementById('name').value.trim() || 'Friend';
+              const email = document.getElementById('email').value.trim();
+              // This is intentionally non-networking: show a friendly local message.
+              alert('Thanks, ' + name + '! Your message was captured locally. Email: ' + email + '.\nTo send messages from this form, I can help integrate a backend or a service (Formspree, Netlify Forms, or a custom endpoint).');
+              e.target.reset();
+            }
+          </script>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Tips</strong>
+          <div class="muted" style="margin-top:8px">
+            - Replace placeholder links with your GitHub repos.<br>
+            - Add a profile image inside the .logo element or next to your name.<br>
+            - I can help publish this via GitHub Pages if you want.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      Built with care — edit this README.html and commit to your repo to update it.
+    </footer>
+  </div>
+</body>
+</html>
