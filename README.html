@@ -1,37 +1,257 @@
-🌟 Hi, I’m Abdunasir — Full-Stack Web Developer
-🚀 I build modern, scalable, and high-performance web applications.
-💡 About Me
-🔧 Full-stack developer (Frontend + Backend)
-⚡ Passionate about clean architecture, performance, and scalable systems
-💻 Love working with JavaScript, TypeScript, React, Node.js, Express, MongoDB, PostgreSQL
-🎨 UI/UX enthusiast – pixel-perfect designs
-🚀 Always learning, always building!
-🛠️ Tech Stack
-Frontend
-React / Next.js
-Tailwind CSS / Bootstrap / Sass
-Redux Toolkit / Zustand
-Backend
-Node.js / Express
-REST APIs / GraphQL
-Authentication (JWT, OAuth)
-Database & DevOps
-MongoDB / PostgreSQL / MySQL
-Firebase / Supabase
-Git / GitHub / Docker
-📂 Featured Projects
-🔹 Project Name 01
-A short description of the project, what problem it solves, and technologies used.
-Tech: React, Node.js, MongoDB
-🔹 Project Name 02
-Another highlight project with clean explanation.
-Tech: Next.js, Tailwind, PostgreSQL
-📈 GitHub Stats
-�
-�
-🌐 Connect With Me
-💼 Portfolio: Add Your Link
-📧 Email: yourEmail@example.com
-🔗 LinkedIn: Add Your Link
-✨ Motto
-"Code with purpose. Build with passion. Ship with confidence."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Full Stack Developer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #cbd5e1; /* slate-300 */
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom class for fade-in-on-scroll animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom styles for form inputs on focus */
+        .form-input:focus {
+            --tw-ring-color: #6366f1; /* indigo-500 */
+            box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px var(--tw-ring-color), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Your Name -->
+                <a class="flex-shrink-0 flex items-center" href="#">
+                    <span class="text-2xl font-bold text-white">Your Name</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <a href="#about" class="text-slate-300 hover:text-indigo-400 transition-colors duration-200">About</a>
+                    <a href="#skills" class="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden flex items-center">
+                    <button id="menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed. -->
+                        <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon when menu is open. -->
+                        <svg id="menu-icon-open" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="hidden sm:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">About</a>
+                <a href="#skills" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Skills</a>
+                <a href="#projects" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Projects</a>
+                <a href="#contact" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="hero" class="flex flex-col md:flex-row items-center justify-between py-24 md:py-32 md:min-h-screen">
+            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+                    Hi, I'm <span class="text-indigo-400">[Your Name]</span>
+                </h1>
+                <p class="mt-4 text-2xl sm:text-3xl font-medium text-slate-200">
+                    Full Stack Web Developer
+                </p>
+                <p class="mt-6 text-lg text-slate-300 max-w-xl mx-auto md:mx-0">
+                    I build fast, responsive, and secure web applications from concept to deployment. I'm passionate about clean code and great user experiences.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-white bg-slate-800 hover:bg-slate-700 transition-colors duration-200 shadow-lg">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+                <img src="https://placehold.co/400x400/1e293b/6366f1?text=Your+Photo" 
+                     alt="A professional photo of [Your Name]" 
+                     class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-slate-700">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 sm:py-32 fade-in">
+            <div class="bg-slate-800 rounded-2xl p-8 sm:p-12 lg:p-16 shadow-xl">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">About Me</h2>
+                <div class="text-lg text-slate-300 space-y-6 max-w-3xl mx-auto">
+                    <p>
+                        Hello! I'm a full-stack developer based in [Your City], with a passion for building digital solutions. My journey in tech started with a simple "Hello World" and has grown into a career where I get to solve complex problems and build applications that people love to use.
+                    </p>
+                    <p>
+                        I specialize in the MERN stack (MongoDB, Express, React, Node.js) but I'm always eager to learn new technologies. I thrive in collaborative environments and I'm dedicated to writing code that is not only functional but also clean, maintainable, and scalable.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me [Your Hobby, e.g., hiking, reading sci-fi, or exploring new coffee shops].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 sm:py-32 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-16 text-center">My Tech Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-indigo-400 mb-4 text-center">Frontend</h3>
+                    <ul class="flex flex-wrap gap-3 justify-center">
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">HTML5</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">CSS3</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">JavaScript (ES6+)</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">React</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Next.js</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Tailwind CSS</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">TypeScript</li>
+                    </ul>
+                </div>
+                <!-- Backend -->
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-indigo-400 mb-4 text-center">Backend</h3>
+                    <ul class="flex flex-wrap gap-3 justify-center">
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Node.js</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Express.js</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Python</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Django</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">REST APIs</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">GraphQL</li>
+                    </ul>
+                </div>
+                <!-- Database & Tools -->
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-indigo-400 mb-4 text-center">Databases & Tools</h3>
+                    <ul class="flex flex-wrap gap-3 justify-center">
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">MongoDB</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">PostgreSQL</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">MySQL</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Git & GitHub</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Docker</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">Vercel</li>
+                        <li class="bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-full">AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 sm:py-32 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-16 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col transition-transform duration-300 hover:scale-[1.03] hover:shadow-indigo-500/20">
+                    <img src="https://placehold.co/600x400/1e293b/93c5fd?text=Project+1+Screenshot" alt="Screenshot of Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-white mb-2">E-Commerce Platform</h3>
+                        <p class="text-slate-300 mb-4 flex-grow">A full-featured e-commerce site with user auth, product catalog, shopping cart, and Stripe integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Next.js</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Stripe</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Tailwind</span>
+                        </div>
+                        <div class="mt-auto flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200">
+                                <!-- External link icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 border border-slate-600 text-sm font-medium rounded-md text-white bg-slate-700 hover:bg-slate-600 transition-colors duration-200">
+                                <!-- GitHub icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col transition-transform duration-300 hover:scale-[1.03] hover:shadow-indigo-500/20">
+                    <img src="https://placehold.co/600x400/1e293b/93c5fd?text=Project+2+Screenshot" alt="Screenshot of Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-white mb-2">Real-Time Chat App</h3>
+                        <p class="text-slate-300 mb-4 flex-grow">A full-stack chat application using WebSockets for instant messaging, with rooms and user authentication.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Socket.io</span>
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">Express</span>
+                        </div>
+                        <div class="mt-auto flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200">
+                                <!-- External link icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 border border-slate-600 text-sm font-medium rounded-md text-white bg-slate-700 hover:bg-slate-600 transition-colors duration-200">
+                                <!-- GitHub icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col transition-transform duration-300 hover:scale-[1.03] hover:shadow-indigo-500/20">
+                    <img src="https://placehold.co/600x400/1e293b/93c5fd?text=Project+3+Screenshot" alt="Screenshot of Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-white mb-2">Dev Blog Platform</h3>
+                        <p class="text-slate-300 mb-4 flex-grow">A markdown-based blog (CMS) for developers, built with Next.js static site generation for performance.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-slate-700 text-slate-200 text-xs font-medium px-3 py-1 rounded-full">N
